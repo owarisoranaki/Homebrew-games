@@ -1,0 +1,75 @@
+enum AUTOROTATIONCHANGE{ AUTO_ROTATION_BACKWARD, AUTO_ROTATION_FRONT, AUTO_ROTATION_RIGHT, AUTO_ROTATION_LEFT };
+enum CAMERAHOMEPOSITIONTYPE{ CAMERA_HOMEPOSITIONTYPE_NO, CAMERA_HOMEPOSITIONTYPE_YES };
+enum MOUSEROTATIONCHANGETYPE{ MOUSE_ROTATION_OFF, MOUSE_ROTATION_ON};
+enum KEYNO{N,W,S,A,D,F};
+// ÉJÉÅÉâ
+class CCamera : public CMyMover {
+public:
+	
+	int BOSS_MOVIE_TIME = 0;
+	int BOSS_MOVIE_TIME2 = 0;
+	int BOSS_MOVIE_TIME3 = 0;
+	int MOVIE_END_COUNT = 0;
+	int ETMOVIE_CAMERA_TIME = 0;
+	float x = 0;
+	float y = 0;
+	float z = 0;
+	float ROTATION_SP = 0;
+	float MOUSE_WHEEL_COPY1 = MouseState[0].Wheel;
+	float HOMING_SP = 0;
+	int MOVIE_CANCEL_TIME = 0;
+	int COMBAT_CHANGE_TIME = 0;
+	int COMBAT_CAMERA = 0;
+	int CAMERA_CHANGE = 0;
+	int CAMERA_ROTA_COUNT = 0;
+	int CAMERA_ROTE_TIME = 0;
+	int CAMERA_COUNT = 0;
+	int CAMERA_COUNT2 = 0;
+	int CAMERA_COUNT3 = 0;
+	int CAMERA_TIME = 0;
+	int ZOOM_WHEEL = 0;
+	int ZOOM_RESET = 0;
+	int AUTO_ROTATION_CHANGE = 0;
+	int MOUSE_MOVE_COUNT = 0;
+	int MOUSE_ROTATION_CHANGETYPE = 0;
+	int MOUSE_ROTATION_TIME = 0;
+	CQuaternion CAMERA_ROTA = 0;
+	CQuaternion MOUSE_ROTATION_COPY = 0;
+	int CAMERA_HOMEPOSITION_TYPE = CAMERA_HOMEPOSITIONTYPE_YES;
+	CQuaternion ROTATION_COPY = 0;
+	CQuaternion ROTATION_COPY2 = 0;
+	CQuaternion ROTATION_COPY3 = 0;
+	int CAMERA_MOVE_COUNT = 0;
+	int CAMERA_MOVE_COUNT2 = 0;
+	float ROTA_DIFFERENCE_X = 0;
+	float ROTA_DIFFERENCE_Y = 0;
+	float ROTA_DIFFERENCE_Z = 0;
+	float ROTA_DIFFERENCE2_X = 0;
+	float ROTA_DIFFERENCE2_Y = 0;
+	float ROTA_DIFFERENCE2_Z = 0;
+	float ROTA_DIFFERENCE3_X = 0;
+	float ROTA_DIFFERENCE3_Y = 0;
+	float ROTA_DIFFERENCE3_Z = 0;
+	float DIFFERENCE_XYZ = 0;
+	float DIFFERENCE2_X = 0;
+	float DIFFERENCE2_Y = 0;
+	float DIFFERENCE2_Z = 0;
+	int COUNT = 0;
+	int KEY_NO = 0;
+	float HOMING_SP2=0;
+	int DASH_NO = 0;
+	int CAMERA_ROTATION_TIME=0;
+	CQuaternion CAMERA_ROTATION_COPY = 0;
+	int CAMERA_AUTOROTATION_STOP = 0;
+	int CAMERA_AUTOROTATION_STOP2 = 0;
+
+	int CENTER_MOVIE_TIME = 0;
+
+
+	void* operator new(size_t n) { return CameraList.New(n); }
+	void operator delete(void* p) { CameraList.Delete(p); }
+	CCamera() : CMyMover(CameraList) {}
+	void Reset();
+	void Move();
+};
+
